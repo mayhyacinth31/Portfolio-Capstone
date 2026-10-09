@@ -234,6 +234,9 @@
     .form{
         /*to be added when making contact page */
     }
+    footer {
+        color: var(--black);
+    }
 }
 
 /* UTILITIES */
