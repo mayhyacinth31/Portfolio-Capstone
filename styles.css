@@ -4,12 +4,12 @@
 @layer fonts {
     @font-face {
     font-family: "Special Elite";
-    src: url(fonts/Special_Elite/SpecialElite-Regular.ttf);
+    src: url(Portfolio-Capstone/fonts/Special_Elite/SpecialElite-Regular.ttf);
 
     }
     @font-face {
         font-family: "Inter";
-        src: url(fonts/Inter/Inter-VariableFont_opsz\,wght.ttf);
+        src: url(Portfolio-Capstone/fonts/Inter/Inter-VariableFont_opsz\,wght.ttf);
     }
 
 }
