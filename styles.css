@@ -1,0 +1,437 @@
+/*CSS by May Giacinto* /
+
+/* imported fonts */
+@layer fonts {
+    @font-face {
+    font-family: "Special Elite";
+    src: url(fonts/Special_Elite/SpecialElite-Regular.ttf);
+
+    }
+    @font-face {
+        font-family: "Inter";
+        src: url(fonts/Inter/Inter-VariableFont_opsz\,wght.ttf);
+    }
+
+}
+
+
+/* CSS Reset */
+@layer reset {
+    /* http://meyerweb.com/eric/tools/css/reset/ 
+    v2.0 | 20110126
+    License: none (public domain)
+    */
+
+    html, body, div, span, applet, object, iframe,
+    h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+    a, abbr, acronym, address, big, cite, code,
+    del, dfn, em, img, ins, kbd, q, s, samp,
+    small, strike, strong, sub, sup, tt, var,
+    b, u, i, center,
+    dl, dt, dd, ol, ul, li,
+    fieldset, form, label, legend,
+    table, caption, tbody, tfoot, thead, tr, th, td,
+    article, aside, canvas, details, embed, 
+    figure, figcaption, footer, header, hgroup, 
+    menu, nav, output, ruby, section, summary,
+    time, mark, audio, video {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-size: 100%;
+        font: inherit;
+        vertical-align: baseline;
+    }
+    /* HTML5 display-role reset for older browsers */
+    article, aside, details, figcaption, figure, 
+    footer, header, hgroup, menu, nav, section {
+        display: block;
+    }
+    body {
+        line-height: 1;
+    }
+    ol, ul {
+        list-style: none;
+    }
+    blockquote, q {
+        quotes: none;
+    }
+    blockquote:before, blockquote:after,
+    q:before, q:after {
+        content: '';
+        content: none;
+    }
+    table {
+        border-collapse: collapse;
+        border-spacing: 0;
+    }
+}
+
+
+/* Root */
+@layer root-setup{
+    :root {
+        --blue: #357BF2;
+        --lt-blue: #5AA7F2;
+        --dk-blue: #1A42BA;
+        --dk-gray:#383C42;
+        --black: #17171A;
+        --white: #F5F2EB;
+        --h-font: "Special Elite";
+        --p-font: "Inter";
+        --sm-space: 1rem;
+        --md-space: 2rem;
+        --lrg-space: 5rem;
+        --dur: .25s;
+    }
+}
+
+/* Global styles (mobile first) */
+
+/* LAYOUT */
+@layer layout{
+    body {
+        text-align: center;
+    }
+    header {
+        position: relative;
+        padding: 0 16px;
+        display:flex;
+        align-items:center;
+        justify-content: space-between;
+        background: var(--black);
+    }
+
+    h1{
+        font-family: var(--h-font);
+        font-size: 4rem;
+        padding: var(--md-space);
+        color: var(--blue)
+    }
+    h2 {
+        font-family: var(--h-font);
+        font-size: 3rem;
+        padding: var(--md-space);
+    }
+    h3 {
+        font-family: var(--h-font);
+        font-size: 2rem;
+    }
+    nav {
+        padding: var(--md-space);
+    }
+    nav ul {
+        display: flex;
+    }
+    ul li {
+        margin: 1rem;
+        padding: 5px;
+        border: 3px solid var(--dk-blue);
+        border-radius: 5px;
+    }
+
+    li a {
+        text-decoration: none;
+        padding: var(--sm-space);
+        color: var(--white)
+    }
+    p {
+        font-family: var(--p-font);
+        padding-bottom: var(--md-space);
+        padding-left: var(--md-space);
+    }
+    footer {
+        background-color: var(--blue);
+    }
+}
+
+
+/* COMPONENTS */
+@layer components{
+
+    .offcanvas{
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 30vw;
+        height: 100dvh;
+        padding: 80px 16px 16px;
+        background: var(--black);
+        transform: translateX(105%);
+        transition: transform var(--dur) ease;
+        z-index: 1001;
+    }
+
+    .offcanvas ul{
+        list-style:none; 
+        padding:0; 
+        margin:0; 
+        display:grid; 
+        gap: 12px; 
+    }
+
+    .offcanvas a{ 
+        color: var(--white); 
+        text-decoration:none; 
+        font-size: 18px; }
+
+
+
+    .hamburger {
+        width: 44px;
+        height: 44px;
+        display: grid;
+        place-content: center;
+        gap: 6px;
+        cursor: pointer;
+        border-radius: 10px;
+    }
+
+    .bar{
+        width: 28px;
+        height: 3px;
+        background: var(--white);
+        border-radius: 999px;
+        transition: transform var(--dur) ease, opacity var(--dur) ease;
+    }
+
+    .overlay{ 
+        pointer-events: none; 
+    }
+
+    .card {
+        border: 3px solid var(--dk-blue);
+        border-radius: 10px;
+        background-color: var(--white);
+        margin: var(--md-space);
+        padding: var(--sm-space);
+        width: 40vw;
+    }
+    .button {
+        background-color: var(--dk-gray);
+        border: 5px solid var(--dk-gray);
+        border-radius: 5px;
+        color: var(--white);
+        padding: 2px;
+        width:8rem;
+    }
+    .callout {
+        background-color: var(--black);
+        width: 40vw;
+        margin: var(--sm-space);
+        padding-top: var(--md-space);
+    }
+
+    .callout h3 {
+        color:var(--blue);
+        padding-left: var(--sm-space);
+    }
+
+    .callout p {
+        color: var(--white);
+    }
+
+    .form{
+        /*to be added when making contact page */
+    }
+}
+
+/* UTILITIES */
+@layer utilities {
+
+    .sr-only{
+        position:absolute; 
+        width:1px; 
+        height:1px; 
+        padding:0; 
+        margin:-1px;
+        overflow:hidden; 
+        clip:rect(0,0,0,0); 
+        white-space:nowrap; 
+        border:0;
+    }
+
+
+    .close-menu {
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        font-size: 3rem;
+        cursor: pointer;
+        line-height: 1;
+        color: var(--white);
+    }
+
+    .nav-toggle{
+        position: absolute;
+        opacity: 0;
+        pointer-events: none;
+    }
+
+
+    .overlay{
+        position: fixed;
+        inset: 0;
+        background: rgba(0,0,0,.45);
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity var(--dur) ease, visibility 0s linear var(--dur);
+        z-index: 1000;
+    }
+
+
+
+    .nav-toggle{
+        position: absolute;
+        opacity: 0;
+        pointer-events: none;
+    }
+    
+    .vertical_align {
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr;
+    }
+    .center_align {
+        align-content: center;
+    }
+}
+/* STATES */
+@layer states {
+    [aria-current="page"]{
+        text-decoration: underline;
+        text-decoration-color: var(--lt-blue);
+    }
+    .hidden {
+        visibility: hidden;
+    }
+    li:hover {
+        background-color: var(--dk-blue);
+    }
+    li a:focus {
+        border: 3px solid var(--lt-blue);
+        border-radius: 10px;
+    }
+    .fade-in {
+        opacity: 0;
+            animation: fadeIn 2s forwards;
+        }
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }    
+        }
+
+    .nav-toggle:checked ~ .offcanvas{
+        transform: translateX(0);
+    }
+
+    .nav-toggle:checked ~ .overlay{
+        opacity: 1;
+        visibility: visible;
+        transition: opacity var(--dur) ease;
+    }
+
+    .hamburger:focus-visible{
+        outline: 2px solid var(--lt-blue);
+        outline-offset: 2px;
+    }
+
+    .nav-toggle:checked ~ .overlay{ 
+        pointer-events: auto; 
+    }
+
+    .button:hover {
+        background-color: var(--blue);
+        border: 3px solid var(--lt-blue);
+        padding: 4px;
+    }
+
+    .button:focus {
+        border: 3px solid var(--lt-blue);
+        padding: 4px;
+    }
+
+}
+
+/* OVERRIDES */
+@layer overrides {
+
+}
+
+/* media queries - medium */
+@media only screen and (min-width: 768px){
+    @layer navigation-edit {
+         .nav {
+            display: flex;
+        }
+
+        .hamburger{
+            display: none;
+        }
+
+        .nav-toggle {
+            display: none;
+        }
+
+        .close-menu {
+            display: none;
+        }
+
+        .offcanvas {
+            position: static;
+            width: auto;
+            height: auto;
+            transform: none;
+            visibility: visible;
+            overflow: visible;
+            background: none;
+        }
+
+        .offcanvas ul {
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .overlay {
+            display: none;
+        }
+    }
+
+    body {
+        text-align: left;
+    }
+   
+}
+/* media queries - large */
+
+/* media queries - print */
+@media print {
+    img {
+        align-self: center;
+        margin: 0 auto;
+    }
+
+    .nav {
+        visibility: hidden;
+    }
+
+    h1 {
+        color: black;
+    }
+    h3 {
+        color: black;
+    }
+    p {
+        color: black;
+    }
+
+    .button {
+        color: black;
+    }
+}
+
+
