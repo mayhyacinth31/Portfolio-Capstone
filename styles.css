@@ -90,6 +90,12 @@
 
 /* LAYOUT */
 @layer layout{
+
+    .wrapper {
+        inline-size: min(100% - 3rem, 80rem);
+        margin-inline: auto;
+    }
+
     body {
         text-align: center;
     }
@@ -137,8 +143,7 @@
     }
     p {
         font-family: var(--p-font);
-        padding-bottom: var(--md-space);
-        padding-left: var(--md-space);
+ 
     }
     footer {
         background-color: var(--blue);
@@ -199,13 +204,44 @@
         pointer-events: none; 
     }
 
-    .card {
+    /*CONTAINER HERE  -  default is mobile-first and still works as needed. The 
+    only changes are of the layout within the container itself, the content remains the same*/
+    .card-container {
+        
+        container-type: inline-size;
+        width: clamp(20vw, 60vw, 80vw);
+    }
+
+    .card{
         border: 3px solid var(--dk-blue);
         border-radius: 10px;
         background-color: var(--white);
         margin: var(--md-space);
         padding: var(--sm-space);
-        width: 40vw;
+        text-align: center;
+    }
+
+    @container (width > 30vw){
+        .card{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: baseline;
+        }
+        .card img {
+            max-width: 10rem;
+        }
+        .card button {
+            width: 10rem;
+            height: 3rem;
+        }
+    }
+
+    .card p {
+        padding: 1rem;
+    }
+
+    .card img {
+        width: clamp(20vw, 30vw, 40vw);
     }
     .button {
         background-color: var(--dk-gray);
