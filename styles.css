@@ -102,17 +102,26 @@
     header {
         position: relative;
         padding: 0 16px;
-        display:flex;
+        display: grid;
+        grid-template-columns: minmax(20rem, auto) 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
         align-items:center;
         justify-content: space-between;
         background: var(--black);
+    }
+
+    header p {
+        padding: var(--md-space);
+        color: var(--lt-blue);
+        grid-row: 3;
     }
 
     h1{
         font-family: var(--h-font);
         font-size: 4rem;
         padding: var(--md-space);
-        color: var(--blue)
+        color: var(--blue);
+        grid-row: 2;
     }
     h2 {
         font-family: var(--h-font);
@@ -143,8 +152,13 @@
     }
     p {
         font-family: var(--p-font);
- 
+        padding-right: var(--sm-space)
     }
+
+    #intro {
+        display: flex;
+    }
+
     footer {
         background-color: var(--blue);
     }
@@ -153,6 +167,12 @@
 
 /* COMPONENTS */
 @layer components{
+
+    .nav {
+        grid-row: 1;
+        grid-column: 3;
+        right: var(--md-space);
+    }
 
     .offcanvas{
         position: fixed;
@@ -438,6 +458,23 @@
         .overlay {
             display: none;
         }
+    }
+
+    header {
+        grid-template-columns: minmax(20rem, auto) 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+
+    h1 {
+        grid-row: 1;
+        grid-column: 1;
+        padding-bottom: 0rem;
+    }
+
+
+    .nav {
+        grid-row: 1;
+        grid-column: 3;
     }
 
     body {
