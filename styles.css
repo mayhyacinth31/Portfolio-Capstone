@@ -95,6 +95,8 @@
     .wrapper {
         inline-size: min(100% - 3rem, 80rem);
         margin-inline: auto;
+        background-color: var(--white);
+        padding: var(--md-space);
     }
 
     body {
@@ -168,6 +170,8 @@
     #intro {
         display: flex;
         flex-wrap: wrap;
+        max-width: 25rem;
+        margin: 0 auto;
     }
 
     .logo-intro {
@@ -176,11 +180,13 @@
     }
 
     img {
-        max-width: 30rem;
+        max-width: 20rem;
+        padding: var(--sm-space);
     }
 
     footer {
-        background-color: var(--blue);
+        min-height: var(--lrg-space);
+        background-image: linear-gradient(to bottom, var(--lt-blue), var(--dk-blue));
     }
 }
 
@@ -231,6 +237,18 @@
         gap: 6px;
         cursor: pointer;
         border-radius: 10px;
+    }
+
+    .nav:has(.nav-toggle:focus-visible) .hamburger {
+        outline: 2px solid var(--lt-blue);
+        outline-offset: 2px;
+        border-radius: 10px;
+    }
+
+    .close-menu:focus-visible {
+        outline: 2px solid var(--lt-blue);
+        outline-offset: 4px;
+        border-radius: 5px;
     }
 
     .bar{
@@ -345,7 +363,8 @@
     .nav-toggle{
         position: absolute;
         opacity: 0;
-        pointer-events: none;
+        width: 1px;
+        height: 1px;
     }
 
 
@@ -439,7 +458,7 @@
 }
 
 /* media queries - medium */
-@media only screen and (min-width: 768px){
+@media only screen and (min-width: 912px){
     @layer navigation-edit {
          .nav {
             display: flex;
@@ -479,6 +498,10 @@
         .overlay {
             display: none;
         }
+        #intro {
+            max-width: 50rem;
+            margin: 0;
+        }
     }
 
     header {
@@ -492,6 +515,9 @@
         padding-bottom: 0rem;
     }
 
+    img {
+        max-width: 25rem;
+    }
 
     .nav {
         grid-row: 1;
@@ -506,6 +532,7 @@
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
+        margin: 0 auto;
     }
 
     #intro {
@@ -515,6 +542,16 @@
    
 }
 /* media queries - large */
+@media only screen and (min-width: 1250px){
+
+    .wrapper {
+        margin: 0 auto;
+    }
+
+    #intro {
+        align-self: flex-start;
+    }
+}
 
 /* media queries - print */
 @media print {
@@ -539,6 +576,29 @@
 
     .button {
         color: black;
+    }
+}
+
+@media (prefers-color-scheme: dark){
+    .wrapper {
+        background-color: var(--black);
+        color: var(--white);
+        padding: var(--md-space);
+    }
+    .card, .callout {
+        background-color: var(--white);
+        color: var(--dk-blue);
+        border-color: var(--lt-blue);
+    }
+
+    .callout p {
+        color: var(--black);
+    }
+}
+
+@supports (background-color: var(--lt-blue)){
+    main{
+        background-color: var(--lt-blue);
     }
 }
 

@@ -1,3 +1,10 @@
+CHECKS (10/22/26):
+- Narrow, medium, and wide browser sizes all respond as expected. Keyboard focuses work, still piecing together on how to open the small screen menu via keyboard. The dark mode condition was also tested by switching modes. The feature query is there to show that it works, will likely alter this to something else that makes more sense down the road.
+
+GENERAL NOTES:
+LACK OF SUBGRID (CURRENT):
+    My current page is not yet in need of a subgrid. I may decide to utilize one within the gallery page.
+
 REFACTORING EVIDENCE
 Kept a cleaner/non-repetitive layout in mind while beginning the CSS. If I started to code something with a lot of repetition, I would stop, rethink it, and alter things. Added classes for specific alignment and ROOT variables for spacing and color, to name a few examples.
 
@@ -9,4 +16,5 @@ All layers are ordered appropriately from the reset to the overrides. The more s
 Do note that my current HTML structure does not match my wire frames yet as I am still figuring out the CSS architecture.
 
 AI DISCLOSURE
-The only AI used in this assignment was help fixing a bug in the hamburger menu.
+The only AI used in this assignment was help fixing a bug in the hamburger menu. The menu was having trouble positioning properly, suggested fix was to revise the padding.
+
