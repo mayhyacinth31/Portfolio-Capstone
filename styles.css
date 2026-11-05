@@ -141,6 +141,7 @@
     h3 {
         font-family: var(--h-font);
         font-size: 2rem;
+        padding: var(--md-space);
     }
     nav {
         padding: var(--md-space);
@@ -165,6 +166,19 @@
         padding-left: var(--sm-space);
         padding-bottom: var(--sm-space);
 
+    }
+
+    a {
+        color: var(--lt-blue);
+    }
+
+    a:hover{
+        color: var(--white)
+    }
+
+    a:focus{
+        border: 5px solid var(--blue);
+        border-radius: 10px;
     }
 
     #intro {

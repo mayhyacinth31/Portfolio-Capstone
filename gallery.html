@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        
+            <h1 class="fade-in">May Giacinto</h1>
+            <section class="nav">
+
+
+                <input class="nav-toggle" id="nav-toggle" type="checkbox">
+
+                <label class="hamburger" for="nav-toggle">
+                    <span class="sr-only">Open or close menu</span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </label>
+
+                <div class="overlay"></div>
+
+                <nav class="offcanvas" aria-label="Primary navigation">
+                    <label class="close-menu" for="nav-toggle">
+                        <span class="sr-only">Close menu</span>
+                        &times;
+                    </label>
+
+                    <ul>
+                        <li><a href="index.html" aria-current="page">Home</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                    </ul>
+                </nav>
+                
+            </section>
+            <p>Art and Design - Gallery</p>
+        </header>
+        <main>
+            <div class="logo-intro"></div>
+            <div class="wrapper">
+                <section id="design">
+                    <h2>Graphic Design</h2>
+                    <p>caption</p>
+                    <picture>
+                        <source media="(width > 800px)" srcset="images/candy-lizard-600.png" />
+                        <source media="(width < 800px)" srcset="images/candy-lizard-400.png" />
+                        <img src="images/candy-lizard-600.png" alt="candy lizard logo"/>
+                    </picture>   
+                    <picture>
+                        <source media="(width > 800px)" srcset="images/thoron-600.png" />
+                        <source media="(width < 800px)" srcset="images/thoron-400.png" />
+                        <img src="images/thoron-600.png" alt="Thoron company logo" />
+                    </picture>
+                    <picture>
+                        <source media="(width > 800px)" srcset="images/westwood-500.png" />
+                        <source media="(width < 800px)" srcset="images/westwood-400.png" />
+                        <img src="images/westwood-500.png" alt="Westwood HighSchool Art Expo" />
+                    </picture>
+                    <picture>
+                        <source media="(width > 800px)" srcset="images/icecream-500.png" />
+                        <source media="(width < 800px)" srcset="images/icecream-400.png" />
+                        <img src="images/icecream-500.png" alt="ZLF Icecream Co. Business Card" />
+                    </picture>
+
+
+                </section>
+                <section id="illustration">
+                    <h2>Illustration</h2>
+                    <p>caption</p>
+                    <picture>
+                        <source media="(width > 800px)" srcset="images/chupacabra-600.png" />
+                        <source media="(width < 800px)" srcset="images/chupacabra-400.png" />
+                        <img src="images/chupacabra-600" alt="Chupacabra Softball Logo" />
+                    </picture>
+                    <picture>
+                        <source media="(width > 800px)" srcset="images/HII-coin-830.png" />
+                        <source media="(width < 800px)" srcset="images/HII-coin-700.png" />
+                        <img src="images/HII-coin-830.png" alt="Collectable coin with F16 Jet" />
+                    </picture>
+                    
+                </section>
+                <section id="video">
+                    <h2>Video</h2>
+                    <h3>Advertisement Motion Graphic
+                        <br>for Georgia Aquarium</h3>
+                    <p>Educational Purposes</p>
+                    
+                     <!-- Decided to maybe use a couple videos in gallery, not confirmed to stick with it -->
+                    <figure>
+                     <iframe
+                        id="aquarium-video"
+                        title="Georgia Aquarium Advertisement"
+                        width="600"
+                        height="400"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        alt=""
+                       
+
+                        src="images/Georgia Aquarium.mp4"></iframe>
+                        <figcaption>(Calming audio throughout video)</figcaption>
+                    </figure>
+                        <p>Video not working? Click this link to view: <a href="https://youtu.be/nYbzZvSzRP0?si=2c2OYvvrNJg7P2l3">Watch on YouTube</a></p>
+                </section>
+            </div>
+        <footer>
+            <p>footer paragraph</p>
+        </footer>
+        </main>
+</body>
+</html>
