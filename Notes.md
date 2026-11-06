@@ -1,3 +1,10 @@
+CHECKS (11/05/26):
+- Browser size checks done at narrow through wide. All elements currently react as expected. Same goes for 200% zoom, image sizes, alt text, and layout shifts. Loading is also as expected.
+
+NOTE: All reactive images are currently in the gallery page only and will be added to the home/index further in the process.
+
+
+
 CHECKS (10/22/26):
 - Narrow, medium, and wide browser sizes all respond as expected. Keyboard focuses work, still piecing together on how to open the small screen menu via keyboard. The dark mode condition was also tested by switching modes. The feature query is there to show that it works, will likely alter this to something else that makes more sense down the road.
 
