@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta title="about page">
+        <meta name="author" content="May Giacinto">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <header>
+        
+            <h1 class="fade-in">May Giacinto</h1>
+            <section class="nav">
+
+
+                <input class="nav-toggle" id="nav-toggle" type="checkbox">
+
+                <label class="hamburger" for="nav-toggle">
+                    <span class="sr-only">Open or close menu</span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </label>
+
+                <div class="overlay"></div>
+
+                <nav class="offcanvas" aria-label="Primary navigation">
+                    <label class="close-menu" for="nav-toggle">
+                        <span class="sr-only">Close menu</span>
+                        &times;
+                    </label>
+
+                    <ul>
+                        <li><a href="index.html" aria-current="page">Home</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+                
+            </section>
+            <p>Art and Design</p>
+        </header>
+        <main>
+            <div class="logo-intro"></div>
+            <div class="wrapper">
+                <h2>
+                    About the Artist
+                </h2>
+                
+                    <picture>
+                        <source media="(width > 800px)" srcset="images/placeholder.jpg" />
+                        <source media="(width < 800px)" srcset="images/placeholder.jpg" />
+                        <img src="images/placeholder.jpg" alt="to be added"/>
+                    </picture> 
+                    
+                    <section id="about">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse at sapien vel nibh blandit pulvinar.
+                        Cras sed mauris eu nisl tempor mattis. Phasellus cursus enim et semper interdum. Vestibulum et eros arcu.
+                        Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+                    <p>Phasellus faucibus pulvinar facilisis.
+                        Sed in justo et magna iaculis convallis. Duis ipsum risus, blandit vitae enim vel, ultricies pretium metus. Nam ut neque hendrerit,
+                        sodales erat sit amet, pharetra risus. Aenean vel massa non ex maximus rhoncus. Maecenas id metus et sem dictum congue. Morbi blandit viverra 
+                        diam, non iaculis orci mollis et. Morbi dignissim, diam et vehicula posuere, mi lorem laoreet erat, vel pharetra lacus ipsum non dui. In at nisi non libero dictum pulvinar quis at nisi.</p>
+                </section>
+            </div>
+        </main>
+        <footer>
+            <p>Copyright &copy 2026</p>
+        </footer>
+    </body>
+</html>

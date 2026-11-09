@@ -216,6 +216,17 @@
         min-height: var(--lrg-space);
         background-image: linear-gradient(to bottom, var(--lt-blue), var(--dk-blue));
     }
+
+    footer p {
+        text-align: center;
+        padding: 2rem;
+    }
+
+    #about {
+        display: grid;
+        max-width: 30rem;
+        padding: var(--md-space);
+    }
 }
 
 
