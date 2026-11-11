@@ -1,5 +1,7 @@
 /*CSS by May Giacinto* /
 
+/* order: reset -> layout -> components -> utilities -> states -> overrides */
+
 /* imported fonts */
 @layer fonts {
     @font-face {
@@ -71,10 +73,10 @@
 /* Root */
 @layer root-setup{
     :root {
-        --blue: #357BF2;
-        --lt-blue: #5AA7F2;
-        --dk-blue: #1A42BA;
-        --dk-gray:#383C42;
+        /* all colors used as needed and are decorative rather than having specific uses such as buttons and actions */
+        --main-blue: #357BF2;
+        --accent-blue: #5AA7F2;
+        --dk-accent-blue: #1A42BA;
         --black: #17171A;
         --white: #F5F2EB;
         --h-font: "Special Elite";
@@ -83,7 +85,10 @@
         --md-space: 2rem;
         --lrg-space: 5rem;
         --exlrg-space: 15rem;
+        --focus:  5px solid var(--accent-blue);
+        --brd-radius: 10px;
         --dur: .25s;
+        
     }
 }
 
@@ -118,22 +123,13 @@
         justify-content: baseline;
     }
 
-    header p {
-        padding: var(--md-space);
-        color: var(--lt-blue);
-        grid-row: 2;
-        grid-column: 1;
-        text-align: left;
-        font-size: larger;
-        font-weight: bold;
-    }
 
     h1{
         font-family: var(--h-font);
         font-size: 4rem;
         padding-left: var(--sm-space);
         padding-top: var(--md-space);
-        color: var(--blue);
+        color: var(--main-blue);
         grid-row: 1;
         text-align: left;
     }
@@ -156,8 +152,8 @@
     ul li {
         margin: 1rem;
         padding: 5px;
-        border: 3px solid var(--dk-blue);
-        border-radius: 5px;
+        border: 3px solid var(--dk-accent-blue);
+        border-radius: var(--brd-radius);
     }
 
     li a {
@@ -173,7 +169,7 @@
     }
 
     a {
-        color: var(--lt-blue);
+        color: var(--accent-blue);
     }
 
     a:hover{
@@ -181,8 +177,8 @@
     }
 
     a:focus{
-        border: 5px solid var(--blue);
-        border-radius: 10px;
+        border: var(--focus);
+        border-radius: var(--brd-radius);
     }
 
     #intro {
@@ -193,7 +189,7 @@
     }
 
     .logo-intro {
-        background-image: linear-gradient(to top, var(--lt-blue), var(--dk-blue));
+        background-image: linear-gradient(to top, var(--accent-blue), var(--dk-accent-blue));
         height: var(--exlrg-space);
     }
 
@@ -214,7 +210,7 @@
 
     footer {
         min-height: var(--lrg-space);
-        background-image: linear-gradient(to bottom, var(--lt-blue), var(--dk-blue));
+        background-image: linear-gradient(to bottom, var(--accent-blue), var(--dk-accent-blue));
     }
 
     footer p {
@@ -226,6 +222,19 @@
         display: grid;
         max-width: 30rem;
         padding: var(--md-space);
+    }
+}
+
+/* component-scoped */
+@scope (header) to (main){
+    p {
+        padding: var(--md-space);
+        color: var(--accent-blue);
+        grid-row: 2;
+        grid-column: 1;
+        text-align: left;
+        font-size: larger;
+        font-weight: bold;
     }
 }
 
@@ -275,19 +284,20 @@
         place-content: center;
         gap: 6px;
         cursor: pointer;
-        border-radius: 10px;
+        border-radius: var(--brd-radius);
     }
 
-    .nav:has(.nav-toggle:focus-visible) .hamburger {
-        outline: 2px solid var(--lt-blue);
+    .nav:has(.nav-toggle:focus-visible) .hamburger, .nav-toggle:focus-visible ~ .offcanvas .close-menu {
+        outline: var(--focus);
         outline-offset: 2px;
-        border-radius: 10px;
+        border-radius: var(--brd-radius);
     }
+
 
     .close-menu:focus-visible {
-        outline: 2px solid var(--lt-blue);
+        outline: var(--focus);
         outline-offset: 4px;
-        border-radius: 5px;
+        border-radius: var(--brd-radius);
     }
 
     .bar{
@@ -302,6 +312,34 @@
         pointer-events: none; 
     }
 
+        .close-menu {
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        font-size: 3rem;
+        cursor: pointer;
+        line-height: 1;
+        color: var(--white);
+    }
+
+    .nav-toggle{
+        position: absolute;
+        opacity: 0;
+        width: 1px;
+        height: 1px;
+    }
+
+
+    .overlay{
+        position: fixed;
+        inset: 0;
+        background: rgba(0,0,0,.45);
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity var(--dur) ease, visibility 0s linear var(--dur);
+        z-index: 1000;
+    }
+
     /*CONTAINER HERE  -  default is mobile-first and still works as needed. The 
     only changes are of the layout within the container itself, the content remains the same*/
     .card-container {
@@ -311,8 +349,8 @@
     }
 
     .card{
-        border: 3px solid var(--dk-blue);
-        border-radius: 10px;
+        border: 3px solid var(--dk-accent-blue);
+        border-radius: var(--brd-radius);
         background-color: var(--white);
         margin: var(--md-space);
         padding: var(--sm-space);
@@ -344,7 +382,7 @@
     .button {
         background-color: var(--dk-gray);
         border: 5px solid var(--dk-gray);
-        border-radius: 5px;
+        border-radius: var(--brd-radius);
         color: var(--white);
         padding: 2px;
         width:8rem;
@@ -357,7 +395,7 @@
     }
 
     .callout h3 {
-        color:var(--blue);
+        color:var(--main-blue);
         padding-left: var(--sm-space);
     }
 
@@ -389,41 +427,9 @@
     }
 
 
-    .close-menu {
-        position: absolute;
-        top: 15px;
-        right: 20px;
-        font-size: 3rem;
-        cursor: pointer;
-        line-height: 1;
-        color: var(--white);
-    }
-
-    .nav-toggle{
-        position: absolute;
-        opacity: 0;
-        width: 1px;
-        height: 1px;
-    }
-
-
-    .overlay{
-        position: fixed;
-        inset: 0;
-        background: rgba(0,0,0,.45);
-        opacity: 0;
-        visibility: hidden;
-        transition: opacity var(--dur) ease, visibility 0s linear var(--dur);
-        z-index: 1000;
-    }
 
 
 
-    .nav-toggle{
-        position: absolute;
-        opacity: 0;
-        pointer-events: none;
-    }
     
     .vertical_align {
         display: grid;
@@ -437,17 +443,17 @@
 @layer states {
     [aria-current="page"]{
         text-decoration: underline;
-        text-decoration-color: var(--lt-blue);
+        text-decoration-color: var(--accent-blue);
     }
     .hidden {
         visibility: hidden;
     }
     li:hover {
-        background-color: var(--dk-blue);
+        background-color: var(--dk-accent-blue);
     }
     li a:focus {
-        border: 3px solid var(--lt-blue);
-        border-radius: 10px;
+        border: var(--focus);
+        border-radius: var(--brd-radius);
     }
     .fade-in {
         opacity: 0;
@@ -467,25 +473,23 @@
         opacity: 1;
         visibility: visible;
         transition: opacity var(--dur) ease;
-    }
-
-    .hamburger:focus-visible{
-        outline: 2px solid var(--lt-blue);
-        outline-offset: 2px;
-    }
-
-    .nav-toggle:checked ~ .overlay{ 
         pointer-events: auto; 
     }
 
+    .hamburger:focus-visible{
+        outline: var(--focus);
+        outline-offset: 2px;
+    }
+
+
     .button:hover {
-        background-color: var(--blue);
-        border: 3px solid var(--lt-blue);
+        background-color: var(--main-blue);
+        border: 3px solid var(--accent-blue);
         padding: 4px;
     }
 
     .button:focus {
-        border: 3px solid var(--lt-blue);
+        border: var(--focus);
         padding: 4px;
     }
 
@@ -610,27 +614,28 @@
 
 /* media queries - print */
 @media print {
+    * {
+        background-color: transparent;
+    }
     img {
         align-self: center;
         margin: 0 auto;
     }
 
-    .nav {
+    h1, h2, h3, p {
+        color: black;
+    }
+
+    .callout, .nav, .logo-intro, .card{
         visibility: hidden;
+        height: auto;
+        position: fixed;
     }
+    
 
-    h1 {
-        color: black;
-    }
-    h3 {
-        color: black;
-    }
-    p {
-        color: black;
-    }
-
-    .button {
-        color: black;
+    #home-gal h2 {
+        padding-top: 14rem;
+        /* positions it right before/on 2nd page */
     }
 }
 
@@ -642,8 +647,8 @@
     }
     .card, .callout {
         background-color: var(--white);
-        color: var(--dk-blue);
-        border-color: var(--lt-blue);
+        color: var(--dk-accent-blue);
+        border-color: var(--accent-blue);
     }
 
     .callout p {
@@ -651,9 +656,9 @@
     }
 }
 
-@supports (background-color: var(--lt-blue)){
+@supports (background-color: var(--accent-blue)){
     main{
-        background-color: var(--lt-blue);
+        background-color: var(--accent-blue);
     }
 }
 
