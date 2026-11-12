@@ -170,13 +170,14 @@
 
     a {
         color: var(--accent-blue);
+        font-family: var(--p-font);
     }
 
     a:hover{
         color: var(--white)
     }
 
-    a:focus{
+    a:focus, input:focus, textarea:focus{
         border: var(--focus);
         border-radius: var(--brd-radius);
     }
@@ -223,6 +224,9 @@
         max-width: 30rem;
         padding: var(--md-space);
     }
+
+
+
 }
 
 /* component-scoped */
@@ -241,6 +245,50 @@
 
 /* COMPONENTS */
 @layer components{
+
+    form {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        padding: 3rem;
+        border: 5px solid var(--accent-blue);
+        border-radius: var(--brd-radius);
+        margin-bottom: 2rem;
+    }
+
+    label {
+        font-family: var(--p-font);
+        padding-bottom: .25rem;
+        display: flex;
+        flex-direction: row;
+    }
+
+    input, textarea {
+        margin-bottom: 1rem;
+    }
+
+    textarea{
+        padding-bottom: 1rem;
+    }
+
+    input[type="submit"]{
+        background-color: var(--accent-blue);
+        border-color: var(--main-blue);
+    }
+
+    input[type="submit"]:hover{
+        cursor: pointer;
+        background-color: var(--main-blue);
+    }
+
+    input[type="submit"]:focus{
+        background-color: var(--dk-accent-blue);
+        color: var(--white);
+    }
+
+    .required {
+        color: red;
+    }
 
 
     .nav {
@@ -502,7 +550,7 @@
 }
 
 /* media queries - medium */
-@media only screen and (min-width: 912px){
+@media only screen and (min-width: 960px){
     @layer navigation-edit {
          .nav {
             display: flex;
