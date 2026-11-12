@@ -256,11 +256,14 @@
         margin-bottom: 2rem;
     }
 
+    #contact {
+        padding-left: 0;
+        padding-bottom: 1rem;
+    }
+
     label {
         font-family: var(--p-font);
         padding-bottom: .25rem;
-        display: flex;
-        flex-direction: row;
     }
 
     input, textarea {
@@ -288,6 +291,10 @@
     input[type="submit"]:focus{
         background-color: var(--dk-accent-blue);
         color: var(--white);
+    }
+
+    input:invalid{
+        border: 5px solid red;
     }
 
     .required {
