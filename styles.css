@@ -101,11 +101,13 @@
     body, body * {font-family: var(--Inter), Georgia, 'Times New Roman', Times, serif;}
 
     .wrapper {
-        inline-size: min(100% - 3rem, 80rem);
+        inline-size: minmax(100% - 3rem, 80rem);
         margin-inline: auto;
         background-color: var(--white);
         padding: var(--md-space);
         justify-items: center;
+        border: 5px solid var(--black);
+        border-radius: var(--brd-radius);
     }
 
     body {
@@ -612,6 +614,10 @@
         grid-template-rows: 1fr 1fr;
     }
 
+    .wrapper {
+        width: 85vw;
+    }
+
     h1 {
         grid-row: 1;
         grid-column: 1;
@@ -662,6 +668,7 @@
 
     .wrapper {
         margin: 0 auto;
+        width: min(100% - 3rem, 80rem);
     }
 
     #intro {
