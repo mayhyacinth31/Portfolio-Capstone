@@ -274,6 +274,10 @@
     input[type="submit"]{
         background-color: var(--accent-blue);
         border-color: var(--main-blue);
+        font-family: var(--p-font);
+        font-weight: 600;
+        border-radius: var(--brd-radius);
+        height: 2rem;
     }
 
     input[type="submit"]:hover{
