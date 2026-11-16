@@ -139,6 +139,7 @@
         font-family: var(--h-font);
         font-size: 3rem;
         padding: var(--md-space);
+        text-align: center;
     }
     h3 {
         font-family: var(--h-font);
@@ -616,6 +617,7 @@
 
     .wrapper {
         width: 85vw;
+        padding: var(--md-space);
     }
 
     h1 {
@@ -668,7 +670,8 @@
 
     .wrapper {
         margin: 0 auto;
-        width: min(100% - 3rem, 80rem);
+        width: 80vw;
+        padding: var(--md-space);
     }
 
     #intro {
@@ -709,7 +712,7 @@
     .wrapper {
         background-color: var(--black);
         color: var(--white);
-        padding: var(--md-space);
+        
     }
     .card, .callout {
         background-color: var(--white);
