@@ -1,5 +1,5 @@
 ADDITIONAL CHECKS 11/16/26:
-- Browser size checks done at 500, 940, and 1400px. All components react as expected and sizing stays appropriate. Input the site to Lighthouse automated testing and received back that the site was working and scores a 95 for performance.
+- Browser size checks done at 500, 940, and 1400px. All components react as expected and sizing stays appropriate. Input the site to Lighthouse automated testing and received back that the site was working and scores a 95 for performance with notes on image and font cache loading.
 
 CHECKS (11/05/26):
 - Browser size checks done at narrow through wide. All elements currently react as expected. Same goes for 200% zoom, image sizes, alt text, and layout shifts. Loading is also as expected.
