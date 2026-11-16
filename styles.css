@@ -100,9 +100,6 @@
     /* font fallback */
     body, body * {font-family: var(--p-font), Georgia, 'Times New Roman', Times, serif;}
 
-    *{
-        font-display: swap;
-    }
 
     .wrapper {
         inline-size: minmax(100% - 3rem, 80rem);
