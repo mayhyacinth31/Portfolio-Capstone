@@ -102,7 +102,7 @@
 
 
     .wrapper {
-        inline-size: minmax(100% - 3rem, 80rem);
+        inline-size: minmax(90vw, 80rem);
         margin-inline: auto;
         background-color: var(--white);
         padding: var(--md-space);
@@ -466,9 +466,7 @@
         color: var(--white);
     }
 
-    .form{
-        /*to be added when making contact page */
-    }
+
     footer {
         color: var(--black);
     }
