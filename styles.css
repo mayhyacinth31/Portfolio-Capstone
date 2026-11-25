@@ -98,6 +98,10 @@
 /* LAYOUT */
 @layer layout{
 
+    body {
+        background-color: var(--black);
+    }
+
     /* font fallback */
     body, body * {font-family: var(--p-font), Georgia, 'Times New Roman', Times, serif;}
 
@@ -170,7 +174,8 @@
         font-family: var(--p-font);
         padding-left: var(--sm-space);
         padding-bottom: var(--sm-space);
-
+        font-size: 1.2rem;
+        line-height: 2rem;
     }
 
     a {
@@ -226,6 +231,9 @@
         border-bottom: var(--divider);
     }
 
+    #about-img {
+        align-self: center;
+    }
 
 
     footer {
@@ -240,11 +248,16 @@
 
     #about {
         display: grid;
-        max-width: 30rem;
+        max-width: 50rem;
         padding: var(--md-space);
+        grid-template-columns: auto auto;
+        column-width: 25vw;
     }
 
 
+    #video p {
+        text-align: center;
+    }
 
 }
 
@@ -513,6 +526,9 @@
 
 
 
+    strong {
+        font-weight: bold;
+    }
 
 
     
@@ -628,7 +644,7 @@
             display: none;
         }
         #intro {
-            max-width: 50rem;
+            max-width: 40vw;
             margin: 0;
         }
     }
@@ -669,9 +685,15 @@
 
     #intro {
         display: grid;
-        grid-template-columns: minmax(10rem, auto) minmax(10rem, auto);
+        grid-template-rows: minmax(5rem, auto) minmax(5rem, auto);
+        text-align: center;
+        gap: 2rem;
     }
-   
+
+
+   #home-gal p{
+    text-align: center;
+   }
 
     #illustration {
         display: grid;
